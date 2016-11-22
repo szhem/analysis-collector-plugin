@@ -51,6 +51,7 @@ public class AnalysisProjectAction extends AbstractProjectAction<AnalysisResultA
                 AnalysisDescriptor.isPmdInstalled(),
                 AnalysisDescriptor.isOpenTasksInstalled(),
                 AnalysisDescriptor.isWarningsInstalled());
+        warningsAggregator.hideJobPrefix();
     }
 
     /**
