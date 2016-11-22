@@ -30,7 +30,6 @@ public class WarningsAggregator {
     private final boolean isPmdActivated;
     private final boolean isOpenTasksActivated;
     private final boolean isWarningsActivated;
-    private boolean hideJobPrefix;
 
     /**
      * Creates a new instance of {@link WarningsAggregator}.
@@ -259,7 +258,7 @@ public class WarningsAggregator {
     }
 
     private String getJobPrefix(final Job<?, ?> job) {
-        return hideJobPrefix ? StringUtils.EMPTY : job.getShortUrl();
+        return job.getAbsoluteUrl();
     }
 
     /**
@@ -352,10 +351,4 @@ public class WarningsAggregator {
         return action != null && action.hasValidResults();
     }
 
-    /**
-     * Removes the job/job-name prefix in the URL.
-     */
-    public void hideJobPrefix() {
-        hideJobPrefix = true;
-    }
 }
